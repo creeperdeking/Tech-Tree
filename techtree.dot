@@ -1,0 +1,330 @@
+digraph {
+    splines=ortho;
+    graph [rankdir=LR, fontname="Helvetica"];
+    
+    newrank=true; // rank without respect to cluster
+    node [
+        shape="box",
+        fixedsize="true",
+        width=2,
+        color="black",
+        fillcolor="white",
+        style="filled,solid",
+        fontsize=12
+        ];
+    edge [penwidth=0.75,arrowsize=0.6]
+    edge [color=black, fontsize=8, forcelabels=true]
+ 
+    subgraph cluster_0 {
+        label="1700-1799";
+
+        Mongolfier;
+        "Gas baloon";
+        "Reciprocating Steam Engine";
+        "Complex Analysis";
+        "Power Loom";
+        "Lithography";
+    }
+
+    "Reciprocating Steam Engine" -> "High Pressure Steam Engine";
+    "Complex Analysis" -> "Quaternion Math";
+    
+    subgraph cluster_1 {
+        label="1800-1849";
+
+        "High Pressure Steam Engine" -> "Railroad";
+        "High Pressure Steam Engine" -> "Steam Turbine";
+        "High Pressure Steam Engine" -> "Steam Ship";
+        "High Pressure Steam Engine"
+        "Steam Ship";
+        "High Furnace" -> "Railroad";
+        "High Furnace";
+        "Portland Cement";
+        Canning;
+        Railroad;
+        "Quaternion Math";
+        Telegraph;
+
+        "Urea Synthesis";
+    }
+
+    "Quaternion Math" -> "Maxwell Electromagnetism";
+    "Quaternion Math" -> "Modern Vector Math";
+    "Quaternion Math" -> "Maxwell Electromagnetism";
+    Telegraph -> "Telephone";
+    "Steam Ship" -> "Ocean Liner";
+    "High Furnace" -> "Rotary Kiln";
+    "High Furnace" -> "Bessemer Process";
+    "Railroad" -> "Electric Locomotive";
+    "Portland Cement" -> "Reinforced Concrete";
+
+    subgraph cluster_2 {
+        label="1850-1874";
+
+
+        "Maxwell Electromagnetism";
+        "General Anesthesia";
+        "Bessemer Process";
+        "Rotary Kiln";
+        "Rotary Kiln" -> "Reinforced Concrete";
+        "Bessemer Process" -> "Reinforced Concrete";
+        "Bessemer Process" -> "Open Hearth Steelmaking";
+        "Maxwell Electromagnetism";
+        "Nitroglycerin";
+        "Germ Theory";
+        "Quinine";
+
+        "Safety Elevator";
+
+        "Ocean Liner";
+        "Germ Theory" -> "Pasteurization";
+        "Germ Theory" -> "Modern Sewers";
+    }
+
+    "High Furnace" -> "Bayer Process";
+    "Nitroglycerin" -> "Dynamite";
+    "High Pressure Steam Engine" -> "Coal Power Plant";
+    "Germ Theory" -> Penicilin;
+    "Germ Theory" -> Vaccines;
+    "Electric Motor" -> "Coal Power Plant";
+    "Electric Motor" -> "Hydroelectric Power Plant";
+    "Electric Motor" -> "AC Power Transmission";
+    "Electric Motor" -> "Lightbulb";
+    "Bessemer Process" -> "Steel Frame Building";
+
+    subgraph cluster_3 {
+        label="1875-1899";
+
+        "Oil Extraction";
+        "Oil Extraction" -> "Oil Refining";
+        "Steel Frame Building";
+        Penicilin;
+        Vaccines;
+        "Dynamite";
+        "Modern Vector Math";
+        "Phonograph";
+        "Penicilin" -> "Cholera & Anthrax Vaccines";
+        "Coal Power Plant";
+        "Telephone";
+        "Rubber Pneumatics" -> Bike;
+        "Bayer Process";
+        Bike -> "Motorbike";
+        "Petrol Car" -> "Flying Car";
+        "Internal Combustion Engine" -> "Petrol Car";
+        "Internal Combustion Engine" -> Airship;
+        "Internal Combustion Engine";
+        "Internal Combustion Engine" -> "Motorbike";
+        Telephone -> "Radiotransmission";
+        "Open Hearth Process" -> "Electric Arc Furnace";
+        "AC Power Transmission" -> "Electric Arc Furnace";
+        "AC Power Transmission" -> "Electric Locomotive";
+        "Radiotransmission" -> Television;
+        "Lead Battery" -> "Electric Car";
+        "Lead Battery" -> "Nickel-Cadmium Battery";
+        "Nickel-Cadmium Battery";
+        "Electric Motor" -> "Electric Car";
+        "Electric Motor" -> "Telephone";
+        "Coal Power Plant";
+        "Coal Power Plant";
+        "Hydroelectric Power Plant";
+        "AC Power Transmission";
+        "Cinema";
+        "Lightbulb";
+        "Maxwell Electromagnetism";
+        "Maxwell Electromagnetism" -> "AC Power Transmission";
+        "Steam Turbine";
+       
+        
+        "Coal Power Plant";
+        "Lightbulb" -> "Fluorescent Lamp";
+
+        "X-ray radiology";
+    }
+    "Coal Power Plant" -> "Nuclear Power Plant";
+    "Coal Power Plant" -> "Gas Turbine Power Plant";
+
+    "Internal Combustion Engine" -> "Airplane";
+    "Internal Combustion Engine" -> "Diesel Engine";
+    "Steam Turbine" -> "Jet Engine";
+    "Nickel-Cadmium Battery" -> "Lithium-Ion Battery";
+    "Gas baloon" -> Airship;
+    "Modern Vector Math" -> "General Relativity";
+
+    "X-ray radiology" -> "Radioactivity";
+    "General Anesthesia" -> "Opioid Analgesics";
+
+
+    subgraph cluster_4 {
+        label="1900-1924";
+
+        "Radioactivity";
+        "Assembly Line";
+        "General Relativity";
+        Airship;
+        "Diesel Engine";
+        "Electric Locomotive";
+        "Glider" -> "Airplane";
+        "Diesel Engine" -> "Petrol Boats";
+        "Diesel Engine" -> "Diesel locomotive";
+        "Diesel Engine";
+        "Opioid Analgesics";
+        "Nitrogen Fixation";
+        "Domestic Refregerator";
+        "Motorway";
+
+    }
+
+    "Diesel Engine" -> "Jet Engine";
+    "X-ray radiology" -> "Nuclear Research Reactor";
+    "Airplane" -> "Autogyro";
+    Airplane -> "Pressurized cabin";
+    "Oil Extraction" -> "Deep Oil Extraction";
+    "Oil Refining" -> "Petrochemicals";
+
+    subgraph cluster_5 {
+        label="1925-1949";
+
+        Fax;
+        "Vitamin C syntesis";
+        "Washing machine";
+        "Air conditionning";
+        "Pressurized cabin";
+        "Deep Oil Extraction";
+        "General Relativity" -> "Quantum Mecanics";
+        "Autogyro" -> "Helicopter";
+        "Jet Engine";
+        "Quantum Mecanics";
+        "Semi-conductor";
+        "Jet Engine" -> "Hovercraft";
+        "Jet Engine" -> "Rocket Engine";
+        "Jet Engine" -> "Jet Aircraft";
+        "Jet Engine" -> "Nuclear Jet Engine";
+        "Autogyro" -> "Flying Car";
+        "Nuclear Research Reactor";
+        "Particle Accelerator" -> "Nuclear Research Reactor";
+        "Quantum Mecanics" -> "Particle Accelerator";
+        "Rocket Engine";
+        "Semi-conductor" -> "Transistor";
+        "Microwave amplifier"
+        "Petrochemicals" -> "Plastics";
+    }
+
+    Transistor -> "LED";
+    Transistor -> "Photovoltaic Cell";
+    Transistor -> "Computer";
+    "Jet Aircraft" -> "Supersonic Aircraft";
+    "Jet Engine" -> "Gas Turbine Power Plant";
+    "Nuclear Research Reactor" -> "Nuclear Power Plant";
+    "Nuclear Research Reactor" -> "Nuclear Submarine";
+    "Nuclear Research Reactor" -> "Nuclear Rocket Engine";
+    "Nuclear Research Reactor" -> "Nuclear Jet Engine";
+    "Nuclear Research Reactor" -> "Isotopic Separation";
+    "Nuclear Research Reactor" -> "Radiotherapy";
+    "Rocket Engine" -> "Sattelite";
+    "Rocket Engine" -> "Nuclear Rocket Engine";
+    "Hovercraft" -> "Air-cushion Train";
+    "Electric Locomotive" -> "High Speed Electric Rail";
+    "Microwave amplifier" -> "Laser";
+    "Plastics" -> "Composite Materials";
+    "Open Hearth Steelmaking" -> "Basic oxygen Steelmaking";
+    "Plastics" -> "Optical Fiber";
+    "Microwave amplifier" -> "Microwave oven";
+
+    subgraph cluster_6 {
+        label="1950-1974";
+
+        "Coal Power Plant" -> "Nuclear Power Plant";
+        "Coal Power Plant" -> "Gas Turbine Power Plant";
+        "Composite Materials";
+        "Basic oxygen Steelmaking";
+        "Polio Vaccine";
+        "Deep Oil Extraction" -> "Offshore Oil Extraction";
+        "Computer" -> "Microprocessor";
+        "Computer" -> "Programming Languages";
+        "Computer" -> "Hard Disk";
+        "Laser" -> "Hard Disk";
+        "Laser";
+        "Programming Languages" -> "Operating Systems";
+        "Supersonic Aircraft";
+        "Gas Turbine Power Plant";
+        "Air-cushion Train";
+        "High Speed Electric Rail";
+        "Nuclear Jet Engine" -> "Nuclear Aircraft";
+        "Supersonic Aircraft" -> "HyperSonic Aircraft";
+        "Sattelite";
+        "Nuclear Rocket Engine";
+        "Sattelite" -> "Manned Spacecraft";
+        "Manned Spacecraft" -> "Space Station";
+        "Nuclear Power Plant";
+        "Nuclear Submarine";
+        "Contraceptive pill";
+        "Optical Fiber";
+        "LED";
+        "Nuclear Rocket Engine";
+        "Nuclear Jet Engine";
+        "Isotopic Separation";
+        "Microwave oven";
+        "Radiotherapy";
+        "Nuclear Power Plant" -> "Nuclear Reprocessing";
+        "Isotopic Separation" -> "Nuclear Explosive";
+        "Nuclear Explosive" -> "Thermonuclear Explosive";
+        "Photovoltaic Cell";
+    }
+
+    "Composite Materials" -> "Carbon Fiber";
+    "Photovoltaic Cell" -> "Monocrystalline\nPhotovoltaic Cell";
+    "Sattelite" -> "GPS";
+    "Sattelite" -> "Orion Nuclear Spacecraft";
+    "Sattelite" -> "Reusable Launch System";
+    "Space Station" -> "Rotating Space Habitat";
+    "HyperSonic Aircraft" -> "Reusable Launch System";
+    "Thermonuclear Explosive" -> "Orion Nuclear Spacecraft";
+    "Nuclear Reprocessing" -> "Long Term Nuclear\nWaste Disposal";
+    "Nuclear Reprocessing" -> "Fusion Research Reactor";
+    "Nuclear Reprocessing" -> "Surgenerator";
+    "Operating Systems" -> "Personal Computer";
+    "Microprocessor" -> "Personal Computer";
+    "Operating Systems" -> "Internet";
+
+    subgraph cluster_7 {
+        label="1975-2000";
+
+        "Monocrystalline\nPhotovoltaic Cell";
+        "Carbon Fiber";
+        "Reusable Launch System";
+        "Internet";
+        "Personal Computer";
+        "GPS";
+        "Orion Nuclear Spacecraft";
+        "Reusable Launch System";
+        "Rotating Space Habitat";
+        "Surgenerator";
+        "Orion Nuclear Spacecraft";
+        "Long Term Nuclear\nWaste Disposal";
+        "Fusion Research Reactor";
+        "Lithium-Ion Battery";
+    }
+
+    "Lithium-Ion Battery" -> "Smartphone";
+    "Reusable Launch System" -> "Reusable Orbital Vehicle";
+    "Fusion Research Reactor" -> "Fusion Power Plant";
+    "Internet" -> "Free video communication";
+    "Internet" -> "Search Engine";
+    "Oil Refining" -> "Shale Oil Extraction";
+    "Deep Oil Extraction" -> "Shale Oil Extraction";
+
+    subgraph cluster_8 {
+        label="2000-2024";
+
+        "Shale Oil Extraction";
+        "Smartphone";
+        "Free video communication";
+        "Search Engine";
+        Internet -> "Social Network";
+        "Personal Computer" -> "Social Network";
+        Internet ->"Neural Network";
+        "Neural Network" -> "Artificial General Intelligence";
+        "Reusable Orbital Vehicle";
+        "Fusion Power Plant";
+    }
+}
