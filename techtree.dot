@@ -204,7 +204,6 @@ digraph {
 
     "Radioactivity" -> "Quantum Mecanics";
     "Diesel Engine" -> "Gas Turbine";
-    "X-ray radiology" -> "Nuclear Research Reactor";
     "Airplane" -> "Autogyro";
     Airplane -> "Pressurized cabin";
     "Oil Extraction" -> "Deep Oil Extraction";
@@ -287,6 +286,7 @@ digraph {
         "Flying Car";
 
         "Composite Materials";
+        "Container Logistics" [color="lightblue"];
         "Basic oxygen Steelmaking" [color="grey"];
         "Polio Vaccine" [color="lightblue"];
         "Offshore Oil Extraction" [color="lightblue"];
