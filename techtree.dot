@@ -1,22 +1,36 @@
 digraph {
     splines=ortho;
-    graph [rankdir=LR, fontname="Helvetica"];
+    graph [rankdir=LR, fontname="Helvetica", nodesep=0.2, ranksep=3];    
     
     newrank=true; // rank without respect to cluster
     node [
         shape="box",
         fixedsize="true",
         width=2,
+        height=0.4,
         color="black",
         fillcolor="white",
         style="filled,solid",
         fontsize=12
         ];
     edge [penwidth=0.75,arrowsize=0.6]
-    edge [color=black, fontsize=8, forcelabels=true]
+
+    subgraph cluster_legend {
+        label="Area of origin";
+        graph [rank="same", margin=32,style="dashed", penwidth=4, fontsize=24];
+
+        "United Kingdom" [color="red"];
+        "United States" [color="lightblue"];
+        Germany [color="grey"];
+        France [color="blue"];
+        Japan [color="purple"];
+        Russia [color="yellow"];
+        "Mixed/Other" [color="black"];
+    }
  
     subgraph cluster_0 {
         label="1700-1799";
+        graph [rank="same", margin=32, penwidth=5, color=lightgray, fontsize=20];
 
         Mongolfier [color="blue"];
         "Gas baloon" [color="blue"];
@@ -26,6 +40,8 @@ digraph {
         "Lithography" [color="grey"];
         "Blast Furnace" [color="red"];
         "Smallpox Vaccination";
+        "Scurvy Prevention" [color="red"];
+
     }
 
     "Reciprocating Steam Engine" -> "High Pressure Steam Engine";
@@ -34,6 +50,7 @@ digraph {
     
     subgraph cluster_1 {
         label="1800-1849";
+        graph [rank="same", margin=32, penwidth=5, color=lightgray, fontsize=20];
 
         "High Pressure Steam Engine" [color="red"];
         "Steam Ship" [color="red"];
@@ -62,6 +79,7 @@ digraph {
 
     subgraph cluster_2 {
         label="1850-1874";
+        graph [rank="same", margin=32, penwidth=5, color=lightgray, fontsize=20];
 
         "Maxwell Electromagnetism"  [color="red"];
         "Ether Anesthesia" [color="lightblue"];
@@ -75,6 +93,7 @@ digraph {
         "Pasteurization" [color="blue"];
         "Modern Sewers"  [color="red"];
         "Open Hearth Steelmaking" [color="grey"];
+        "Oil Extraction";
 
         "Rotary Kiln" -> "Reinforced Concrete";
         "Reinforced Concrete" [color="red"];
@@ -92,7 +111,7 @@ digraph {
     "Electric Motor" -> "Coal Power Plant";
     "Electric Motor" -> "Hydroelectric Power Plant";
     "Electric Motor" -> "AC Power Transmission";
-            "Electric Motor" -> "Electric Locomotive";
+    "Electric Motor" -> "Electric Locomotive";
 
     "Electric Motor" -> "Lightbulb";
     "Bessemer Process" -> "Steel Frame Building";
@@ -104,11 +123,10 @@ digraph {
 
     subgraph cluster_3 {
         label="1875-1899";
+        graph [rank="same", margin=32, penwidth=5, color=lightgray, fontsize=20];
 
-        "Oil Extraction";
         "Rubber Tire" [color="red"];
         "Steam Turbine" [color="red"];
-        "Oil Extraction" -> "Oil Refining";
         "Steel Frame Building" [color="lightblue"];
         Penicilin [color="red"];
         "Dynamite";
@@ -124,30 +142,25 @@ digraph {
         Bicycle -> "Motorcycle";
         "Rubber Tire" -> "Motorcycle";
         "Motorcycle" [color="grey"];
-        Bicycle -> "Automobile";
-        
-        "Internal Combustion Engine" -> "Automobile";
-        "Internal Combustion Engine" -> Airship;
+        "Electric Car" [color="grey"];
         "Internal Combustion Engine" [color="grey"];
-        "Internal Combustion Engine" -> "Motorcycle";
-        Telephone -> "Radiotransmission";
-        
-        "Radiotransmission" -> Television;
-        
         "Hydroelectric Power Plant" [color="lightblue"];
         "AC Power Transmission" [color="lightblue"];
-        
         "Lightbulb" [color="lightblue"];
-       
         "Steam Turbine" [color="red"];
-        
         "X-ray radiology" [color="grey"];
-
+        
+        "Internal Combustion Engine" -> "Automobile";
+        "Internal Combustion Engine" -> "Motorcycle";
+        Telephone -> "Radiotransmission";
+        Bicycle -> "Automobile";
+        "Radiotransmission";
         "Electric Motor" -> "Electric Car";
         "Electric Motor" -> "Telephone";
         "Electric Locomotive" [color="grey"];
-
+        "Oil Extraction" -> "Oil Refining";
     }
+    "Radiotransmission" -> Television;
     "Automobile" -> "Flying Car";
     "Coal Power Plant" -> "Nuclear Power Plant";
     "Coal Power Plant" -> "Gas Turbine Power Plant";
@@ -156,6 +169,7 @@ digraph {
     "Internal Combustion Engine" -> "Diesel Engine";
     "Steam Turbine" -> "Gas Turbine";
     "Nickel-Cadmium Battery" -> "Lithium-Ion Battery";
+    "Internal Combustion Engine" -> Airship;
     "Gas baloon" -> Airship;
     "Modern Vector Math" -> "General Relativity";
 
@@ -164,6 +178,7 @@ digraph {
 
     subgraph cluster_4 {
         label="1900-1924";
+        graph [rank="same", margin=32, penwidth=5, color=lightgray, fontsize=20];
 
         "Bakelite" [color="lightblue"];
         "Glider" [color="lightblue"];
@@ -180,12 +195,14 @@ digraph {
         "Motorway" [color="lightblue"];
         "Neon Lighting" [color="lightblue"];
         "Nickel-Cadmium Battery";
+        "Air conditionning" [color="lightblue"];
 
         "Glider" -> "Airplane";
         "Diesel Engine" -> "Petrol Boats";
         "Diesel Engine" -> "Diesel locomotive";
     }
 
+    "Radioactivity" -> "Quantum Mecanics";
     "Diesel Engine" -> "Gas Turbine";
     "X-ray radiology" -> "Nuclear Research Reactor";
     "Airplane" -> "Autogyro";
@@ -199,12 +216,11 @@ digraph {
     
     subgraph cluster_5 {
         label="1925-1949";
+        graph [rank="same", margin=32, penwidth=5, color=lightgray, fontsize=20];
 
         "Fluorescent Lamp" [color="lightblue"];
-        Fax;
         "Vitamin C syntesis";
         "Washing machine" [color="lightblue"];
-        "Air conditionning";
         "Pressurized cabin" [color="lightblue"];
         "Deep Oil Extraction" [color="lightblue"];
         "Helicopter" [color="grey"];
@@ -212,7 +228,7 @@ digraph {
         "Gas Turbine" [color="lightblue"];
         "Jet Engine" [color="grey"];
         "Quantum Mecanics" [color="grey"];
-        "Semi-conductor";
+        "P-n Junction" [color="lightblue"];
         "Jet Aircraft" [color="grey"];
         "Nuclear Explosive" [color="lightblue"];
         "Nuclear Research Reactor" [color="lightblue"];
@@ -232,7 +248,7 @@ digraph {
         "Particle Accelerator" -> "Nuclear Research Reactor";
         "Quantum Mecanics" -> "Particle Accelerator";
         "Petrochemicals" -> "Nylon";
-        "Semi-conductor" -> "Transistor";
+         "P-n Junction" -> "Transistor";
         "General Relativity" -> "Quantum Mecanics";
         "Autogyro" -> "Helicopter";
     }
@@ -240,12 +256,12 @@ digraph {
 
 
     "Nuclear Research Reactor" -> "Nuclear Power Plant";
-    "Nuclear Research Reactor" -> "Nuclear Submarine";
+    "Nuclear Research Reactor" -> "Nuclear Marine Propulsion";
     "Nuclear Research Reactor" -> "Nuclear Rocket Engine";
     "Nuclear Research Reactor" -> "Nuclear Jet Engine";
     "Nuclear Research Reactor" -> "Radiotherapy";
-    Transistor -> "LED";
-    Transistor -> "Photovoltaic Cell";
+    "P-n Junction" -> "LED";
+    "P-n Junction" -> "Photovoltaic Cell";
     Transistor -> "Computer";
     "Jet Aircraft" -> "Supersonic Aircraft";
     "Jet Engine" -> "Nuclear Jet Engine";
@@ -261,9 +277,12 @@ digraph {
     "Coal Power Plant" -> "Nuclear Power Plant";
     
     "AC Power Transmission" -> "Electric Arc Furnace";
+    "Quantum Mecanics" -> "Laser";
+    "General Relativity" -> "Sattelite";
 
     subgraph cluster_6 {
         label="1950-1974";
+        graph [rank="same", margin=32, penwidth=5, color=lightgray, fontsize=20];
 
         "Flying Car";
 
@@ -279,15 +298,15 @@ digraph {
         "Operating Systems" [color="lightblue"];
         "Supersonic Aircraft" [color="lightblue"];
         "Air-cushion Train" [color="blue"];
-        "High Speed Electric Rail" [color="yellow"];
-        "Sattelite" [color="purple"];
+        "High Speed Electric Rail" [color="purple"];
+        "Sattelite" [color="yellow"];
         "Nuclear Rocket Engine" [color="lightblue"];
         "Nuclear Power Plant" [color="lightblue"];
         "Nuclear Jet Engine" [color="lightblue"];
-        "Nuclear Submarine" [color="lightblue"];
-        "Manned Spacecraft" [color="purple"];
-        "Space Station" [color="purple"];
-        "Sattelite" [color="purple"];
+        "Nuclear Marine Propulsion" [color="lightblue"];
+        "Manned Spacecraft" [color="yellow"];
+        "Space Station" [color="yellow"];
+        "Sattelite" [color="yellow"];
         "Contraceptive pill" [color="lightblue"];
         "Optical Fiber";
         "LED" [color="lightblue"];
@@ -313,14 +332,13 @@ digraph {
     }
 
     "Composite Materials" -> "Carbon Fiber";
-    "Photovoltaic Cell" -> "Monocrystalline\nPhotovoltaic Cell";
+    "Photovoltaic Cell" -> "Monocrystalline PV Cell";
     "Sattelite" -> "GPS";
     "Sattelite" -> "Orion Nuclear Spacecraft";
     "Sattelite" -> "Reusable Launch System";
     "Space Station" -> "Rotating Space Habitat";
     "HyperSonic Aircraft" -> "Reusable Launch System";
     "Thermonuclear Explosive" -> "Orion Nuclear Spacecraft";
-    "Nuclear Reprocessing" -> "Long Term Nuclear\nWaste Disposal";
     "Nuclear Reprocessing" -> "Fusion Research Reactor";
     "Nuclear Reprocessing" -> "Surgenerator";
     "Operating Systems" -> "Personal Computer";
@@ -329,8 +347,9 @@ digraph {
 
     subgraph cluster_7 {
         label="1975-2000";
+        graph [rank="same", margin=32, penwidth=5, color=lightgray, fontsize=20];
 
-        "Monocrystalline\nPhotovoltaic Cell";
+        "Monocrystalline PV Cell";
         "Carbon Fiber";
         "Reusable Launch System" [color="lightblue"];
         "Internet" [color="lightblue"];
@@ -340,9 +359,8 @@ digraph {
         "Rotating Space Habitat";
         "Surgenerator";
         "Orion Nuclear Spacecraft" [color="lightblue"];
-        "Long Term Nuclear\nWaste Disposal" [color="blue"];
-        "Fusion Research Reactor" [color="purple"];
-        "Lithium-Ion Battery" [color="yellow"];
+        "Fusion Research Reactor" [color="yellow"];
+        "Lithium-Ion Battery" [color="purple"];
     }
 
     
@@ -357,6 +375,7 @@ digraph {
 
     subgraph cluster_8 {
         label="2000-2024";
+        graph [rank="same", margin=32, penwidth=5, color=lightgray, fontsize=20];
 
         "Shale Oil Extraction" [color="lightblue"];
         "Smartphone" [color="lightblue"];
