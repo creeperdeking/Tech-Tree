@@ -17,7 +17,7 @@ digraph {
     edge [penwidth=0.75,arrowsize=0.6]
 
     subgraph cluster_legend {
-        label="Area of origin";
+        label="Legend";
         graph [rank="same", margin=32,style="dashed", penwidth=4, fontsize=24];
 
         "United Kingdom" [color="red"];
@@ -28,9 +28,11 @@ digraph {
         Russia [color="yellow"];
         Italy [color="green"];
         "Mixed/Other" [color="black"];
+        "" [color="white"];
         "Academia [A]";
         "Military [M]";
-        "Private/Commercial [C]";
+        "Commercial [C]";
+        "Non-Commercial Private [P]";
         "Government/Subsidized [S]";
     }
  
@@ -38,21 +40,30 @@ digraph {
         label="1700-1799";
         graph [rank="same", margin=32, penwidth=5, color=lightgray, fontsize=20];
 
-        Mongolfier [color="blue"];
-        "Geodesic Triangulation [M]" [color="blue"];
+        // Mongolfier [color="blue"];
+        // "Geodesic Triangulation [M]" [color="blue"];
         "Reciprocating Steam Engine\n[C]" [color="red"];
         "Leblanc Process" [color="blue"];
         "Complex Analysis [A]" [color="grey"];
         "Power Loom [C]" [color="red"];
         "Lithography [C]" [color="grey"];
         "Blast Furnace [C]" [color="red"];
-        "Smallpox Vaccination";
-        "Scurvy Prevention [M]" [color="red"];
+        "Coke Hoven [C]" [color="red"];
+        // "Smallpox Vaccination";
+        // "Scurvy Prevention [M]" [color="red"];
         "Jacquard Loom [C]" [color="blue"];
         "Canal Road [C]" [color="red"];
         "Water Powered Factory [C]" [color="red"];
     }
 
+    "Water Powered Factory [C]" -> "Power Loom [C]";
+    "Water Powered Factory [C]" -> "Rivet Factory [C]";
+    "Water Powered Factory [C]" -> "Brick Factory [C]";
+    "Water Powered Factory [C]" -> "Industrial Glass [C]";
+    "Water Powered Factory [C]" -> "Canning [M]";
+    "Coke Hoven [C]" -> "Coal Gaz [C]";
+    "Lithography [C]" -> "Rotary Printing Press [C]";
+    "Jacquard Loom [C]" -> "Power Loom [C]";
     "Reciprocating Steam Engine\n[C]" -> "High Pressure Steam Engine \n [C]";
     "Complex Analysis [A]" -> "Quaternion Math [A]";
     "Blast Furnace [C]" -> "Railroad [C]";
@@ -63,6 +74,8 @@ digraph {
 
         "High Pressure Steam Engine \n [C]" [color="red"];
         "Sugar Beet" [color="grey"];
+        "Coal Gaz [C]";
+        "Rotary Printing Press [C]" [color="lightblue"];
         "Guano Fertilizer [A]" [color="red"];
         "Steam Ship" [color="red"];
         "Canning [M]" [color="red"];
@@ -70,7 +83,7 @@ digraph {
         "Quaternion Math [A]" [color="red"];
         "Vulcanization [C]" [color="lightblue"];
         "Morse Telegraph [C]" [color="red"];
-        "Urea Synthesis" [color="grey"];
+        "Urea Synthesis [A]" [color="grey"];
         "Industrial Glass [C]" [color="red"];
         "Flush Toilet" [color="red"];
         "Photography [C]" [color="blue"];
@@ -79,16 +92,20 @@ digraph {
         "Morphine" [color="red"];
         "Rivet Factory [C]" [color="red"];
         "Brick Factory [C]" [color="red"];
+        "Quinine [A]" [color="blue"];
 
         "High Pressure Steam Engine \n [C]" -> "Railroad [C]";
         "High Pressure Steam Engine \n [C]" -> "Steam Ship";
         "High Pressure Steam Engine \n [C]" -> "Hydraulic Crane [C]";
         "High Pressure Steam Engine \n [C]" -> "Mecanical Excavator [C]";
+
     }
 
+    "Hydraulic Crane [C]" -> "Safety Elevator [C]";
     "Photography [C]" -> "Cinema [C]";
     "High Pressure Steam Engine \n [C]" -> "Steam Turbine [C]";
     "High Pressure Steam Engine \n [C]" -> "Vaccum Pump [C]";
+    "High Pressure Steam Engine \n [C]" -> "Traction Engine [C]";
     "Quaternion Math [A]" -> "Modern Vector Math [A]";
     "Quaternion Math [A]" -> "Maxwell Electromagnetism\n[A]";
     "Morse Telegraph [C]" -> "Telephone [C]";
@@ -99,6 +116,7 @@ digraph {
     "Railroad [C]" -> "Electric Locomotive";
     "Vulcanization [C]" -> "Rubber Tire";
     "Leblanc Process" -> "Solvay Process";
+    "Quinine [A]" -> "Synthetic dye [C]";
 
     subgraph cluster_2 {
         label="1850-1874";
@@ -112,42 +130,47 @@ digraph {
         "Vaccum Pump [C]" [color="red"];
         "Nitroglycerin" [color="blue"];
         "Germ Theory" [color="blue"];
-        "Quinine [A]" [color="blue"];
         "Safety Elevator [C]"  [color="lightblue"];
         "Ocean Liner [C]" [color="red"];
         "Pasteurization" [color="blue"];
         "Modern Sewers [S]"  [color="red"];
         "Open Hearth Steelmaking" [color="grey"];
-        "Oil Extraction";
+        "Oil Extraction [C]";
+        "Oil Pipeline [C]";
         "Synthetic dye [C]" [color="red"];
         "Barbed Wire [C]" [color="lightblue"];
         "Asbestos" [color="red"];
         "Lead Battery" [color="blue"];
         "Reinforced Concrete" [color="red"];
         "Solvay Process";
+        "Dynamo [C]" [color="grey"];
+        "Natural Selection [P]" [color="blue"];
+        "Traction Engine [C]" [color="red"];
 
         "Vaccum Pump [C]" -> "Modern Sewers [S]";
         "Rotary Kiln [C]" -> "Reinforced Concrete";
         "Bessemer Process [C]" -> "Reinforced Concrete";
+        "Bessemer Process [C]" -> "Barbed Wire [C]";
         "Bessemer Process [C]" -> "Open Hearth Steelmaking";
         "Germ Theory" -> "Modern Sewers [S]";
         "Germ Theory" -> "Pasteurization";
+        "Oil Extraction [C]" -> "Oil Pipeline [C]";
     }
 
     "Blast Furnace [C]" -> "Bayer Process [C]";
     "Nitroglycerin" -> "Dynamite [C]";
     "High Pressure Steam Engine \n [C]" -> "Coal Power Plant [C]";
     "Germ Theory" -> Penicilin;
-    "Electric Motor [C]" -> "Coal Power Plant [C]";
-    "Electric Motor [C]" -> "Hydroelectric Power Plant [C]";
-    "Electric Motor [C]" -> "AC Power Transmission [C]";
-    "Electric Motor [C]" -> "Electric Locomotive";
-    "Electric Motor [C]" -> "Lightbulb [C]";
+    "Dynamo [C]" -> "Coal Power Plant [C]";
+    "Dynamo [C]" -> "Hydroelectric Power Plant [C]";
+    "Dynamo [C]" -> "AC Power Transmission [C]";
+    "Dynamo [C]" -> "Electric Locomotive";
+    "Dynamo [C]" -> "Lightbulb [C]";
     "Bessemer Process [C]" -> "Steel Frame Building [C]";
     "Maxwell Electromagnetism\n[A]" -> "AC Power Transmission [C]";
     "Vulcanization [C]" -> "Bicycle [C]";
-    "Lead Battery" -> "Electric Car [C]";
     "Lead Battery" -> "Nickel-Cadmium Battery";
+    "Natural Selection [P]" -> "Chromosome Heredity [A]";
 
     subgraph cluster_3 {
         label="1875-1899";
@@ -156,13 +179,12 @@ digraph {
         "Rubber Tire" [color="red"];
         "Steam Turbine [C]" [color="red"];
         "Steel Frame Building [C]" [color="lightblue"];
-
         "Glass Bottle Production" [color="red"];
         Penicilin [color="red"];
         "Dynamite [C]";
         "Modern Vector Math [A]" [color="red"];
         "Typewriter [C]" [color="lightblue"];
-        "Phonograph [C]" [color="lightblue"];
+        // "Phonograph [C]" [color="lightblue"];
         "Cholera Vaccine" [color="blue"];
         "Coal Power Plant [C]" [color="lightblue"];
         "Telephone [C]" [color="lightblue"];
@@ -171,7 +193,6 @@ digraph {
         "Automobile [C]" [color="grey"];
         "Bicycle [C]" [color="red"];
         "Motorcycle [C]" [color="grey"];
-        "Electric Car [C]" [color="grey"];
         "Compression Ignition [C]" [color="grey"];
         "Hydroelectric Power Plant [C]" [color="lightblue"];
         "AC Power Transmission [C]" [color="lightblue"];
@@ -180,7 +201,7 @@ digraph {
         "X-ray radiology" [color="grey"];
         "Cinema [C]" [color="blue"];
         "Radiotransmission [C]" [color="green"];
-        "Modern Microscope [C]" [color="grey"];
+        // "Modern Microscope [C]" [color="grey"];
         "Refrigerator [C]" [color="red"];
         "R&D Department [C]" [color="lightblue"];
 
@@ -191,16 +212,19 @@ digraph {
         "Bicycle [C]" -> "Motorcycle [C]";
         "Rubber Tire" -> "Motorcycle [C]";
         "Telephone [C]" -> "Radiotransmission [C]";
-        "Bicycle [C]" -> "Automobile [C]";
-        "Electric Motor [C]" -> "Electric Car [C]";
-        "Electric Motor [C]" -> "Telephone [C]";
+        "Dynamo [C]" -> "Telephone [C]";
         "Electric Locomotive" [color="grey"];
         "Penicilin" -> "Cholera Vaccine";
     }
 
+    "Compression Ignition [C]" -> "Air Conditionning";
+    "Arc Welding [C]" -> "Oxy-Fuel Welding/Cutting";
+    "Cholera Vaccine" -> "Antibiotics";
+    "Cholera Vaccine" -> "Attenuated Vaccine";
+    "Automobile [C]" -> "Continuous Track [C]";
     "Radiotransmission [C]" -> "Television [C]";
     // "Automobile [C]" -> "Flying Car";
-    "Coal Power Plant [C]" -> "Nuclear Power Plant [S]";
+    "Steam Turbine [C]" -> "Nuclear Power Plant [S]";
     "Coal Power Plant [C]" -> "Gas Turbine Power Plant [C]";
     "Compression Ignition [C]" -> "Airplane [C]";
     "Compression Ignition [C]" -> "Diesel Engine [C]";
@@ -208,18 +232,22 @@ digraph {
     "Nickel-Cadmium Battery" -> "Lithium-Ion Battery [C]";
     // "Compression Ignition [C]" -> "Airship [M]";
     // "Gas baloon" -> "Airship [M]";
-    "Modern Vector Math [A]" -> "General Relativity [A]";
+    "Modern Vector Math [A]" -> "Theory Of Relativity [P]";
     "X-ray radiology" -> "Radioactivity [A]";
     "Lightbulb [C]" -> "Neon Lighting [C]";
     "Refrigerator [C]" -> "CFC Refrigerant [C]";
     "Reinforced Concrete" -> "Motorway [C]";
     "Automobile [C]" -> "Motorway [C]";
     "Modern Sewers [S]" -> "Water Chlorination";
+    "Chromosome Heredity [A]" -> "DNA [A]";
 
     subgraph cluster_4 {
         label="1900-1924";
         graph [rank="same", margin=32, penwidth=5, color=lightgray, fontsize=20];
 
+        "Oxy-Fuel Welding/Cutting" [color="blue"];
+        "Attenuated Vaccine" [color="blue"];
+        "Chromosome Heredity [A]";
         "Bakelite [C]" [color="lightblue"];
         "Antibiotics" [color="grey"];
         "Continuous Track [C]" [color="lightblue"];
@@ -228,31 +256,40 @@ digraph {
         "Airplane [C]" [color="lightblue"];
         "Radioactivity [A]" [color="blue"];
         "Assembly Line [C]" [color="lightblue"];
-        "General Relativity [A]" [color="grey"];
+        "Theory Of Relativity [P]" [color="grey"];
         // "Airship [M]" [color="grey"];
         "Diesel Engine [C]" [color="grey"];
-        "Diesel locomotive [C]" [color="grey"];
+        // "Diesel locomotive [C]" [color="grey"];
         "Nitrogen Fixation [A]" [color="grey"];
         "Motorway [C]" [color="lightblue"];
         "Neon Lighting [C]" [color="lightblue"];
         "Nickel-Cadmium Battery";
-        "Air conditionning" [color="lightblue"];
+        "Air Conditionning" [color="lightblue"];
         "Leaded Gasoline [C]" [color="lightblue"];
         "CFC Refrigerant [C]" [color="lightblue"];
         "Oil Vapor Cracking [C]";
+        "Natural Gas Pipeline [C]" [color="lightblue"];
 
         "Glider [C]" -> "Airplane [C]";
-        "Diesel Engine [C]" -> "Petrol Boats";
-        "Diesel Engine [C]" -> "Diesel locomotive";
-        "Domestic Refrigerator [C]" -> "CFC Refrigerant [C]";
+                
+        // "Diesel Engine [C]" -> "Petrol Boats";
+        // "Diesel Engine [C]" -> "Diesel locomotive [C]";
     }
 
+    "Water Chlorination" -> "Wastewater Treatment";
     "Radioactivity [A]" -> "Quantum Mecanics [A]";
+    "Attenuated Vaccine" -> "Polio&Measles Vaccine [A]";
     "Diesel Engine [C]" -> "Gas Turbine [C]";
     "Airplane [C]" -> "Autogyro [M]";
-    "Airplane [C]" -> "Pressurized cabin [M]";
-    "Oil Extraction" -> "Deep Oil Extraction";
-    "Oil Extraction" -> "Oil Vapor Cracking [C]";
+    "Airplane [C]" -> "Pressurized Cabin [M]";
+    "Pressurized Cabin [M]" -> "Supersonic Aircraft [M]";
+    "Pressurized Cabin [M]" -> "Manned Spacecraft [S]";
+    "Oil Extraction [C]" -> "Deep Oil Extraction [C]";
+    "Oil Extraction [C]" -> "Oil Vapor Cracking [C]";
+    "Oil Extraction [C]" -> "Compression Ignition [C]";
+    "Oil Extraction [C]" -> "Bakelite [C]";
+    "Automobile [C]" -> "Leaded Gasoline [C]"
+    "Propeller" -> "Steam Turbine [C]"
     "Neon Lighting [C]" -> "Fluorescent Lamp [C]";
     "Gas Turbine [C]" -> "Gas Turbine Power Plant [C]";
     "Coal Power Plant [C]" -> "Gas Turbine Power Plant [C]";
@@ -265,21 +302,20 @@ digraph {
         "Fluorescent Lamp [C]" [color="lightblue"];
         "Vitamin C syntesis";
         "Washing machine [C]" [color="lightblue"];
-        "Pressurized cabin [M]" [color="lightblue"];
-        "Deep Oil Extraction" [color="lightblue"];
+        "Pressurized Cabin [M]" [color="lightblue"];
+        "Deep Oil Extraction [C]" [color="lightblue"];
         "Helicopter [M]" [color="grey"];
         "Gas Turbine Power Plant [C]" [color="grey"];
         "Gas Turbine [C]" [color="lightblue"];
         "Jet Engine [M]" [color="grey"];
         "Quantum Mecanics [A]" [color="grey"];
         "P-n Junction" [color="lightblue"];
-        "Jet Aircraft [M]" [color="grey"];
+        // "Jet Aircraft [M]" [color="grey"];
         "Nuclear Explosive [M]" [color="lightblue"];
         "Nuclear Research Reactor\n[M]" [color="lightblue"];
         "Rocket Engine [M]" [color="grey"];
         "Transistor" [color="lightblue"];
         "Microwave amplifier [M]" [color="red"];
-        "Nylon" [color="lightblue"];
         "Isotopic Separation [M]" [color="lightblue"];
         "Information Theory [A]" [color="lightblue"];
         "Television [C]" [color="grey"];
@@ -293,55 +329,54 @@ digraph {
         "Nuclear Research Reactor\n[M]" -> "Isotopic Separation [M]";
         "Isotopic Separation [M]" -> "Nuclear Explosive [M]";
         // "Jet Engine [M]" -> "Hovercraft";
-        "Jet Engine [M]" -> "Jet Aircraft [M]";
+        // "Jet Engine [M]" -> "Jet Aircraft [M]";
         "Gas Turbine [C]" -> "Jet Engine [M]";
         "Gas Turbine [C]" -> "Rocket Engine [M]";
         "Particle Accelerator [A]" -> "Nuclear Research Reactor\n[M]";
         "Quantum Mecanics [A]" -> "Particle Accelerator [A]";
         "Oil Vapor Cracking [C]" -> "Plastics";
         "P-n Junction" -> "Transistor";
-        "General Relativity [A]" -> "Quantum Mecanics [A]";
+        "Theory Of Relativity [P]" -> "Quantum Mecanics [A]";
         "Autogyro [M]" -> "Helicopter [M]";
-        "Nylon" -> "Composite Materials";
+        "Plastics" -> "Composite Materials";
     }
 
-    // "Autogyro [M]" -> "Flying Car";
     "Information Theory [A]" -> "Computer [M]";
     "Nuclear Research Reactor\n[M]" -> "Nuclear Power Plant [S]";
     "Nuclear Research Reactor\n[M]" -> "Nuclear Marine Propulsion \n [M]";
-    // "Nuclear Research Reactor\n[M]" -> "Nuclear Rocket Engine [M]";
-    // "Nuclear Research Reactor\n[M]" -> "Nuclear Jet Engine [M]";
     "Nuclear Research Reactor\n[M]" -> "Radiotherapy";
     "P-n Junction" -> "LED";
     "P-n Junction" -> "Photovoltaic Cell [S]";
     Transistor -> "Computer [M]";
-    "Jet Aircraft [M]" -> "Supersonic Aircraft [M]";
-    // "Jet Engine [M]" -> "Nuclear Jet Engine [M]";
+    "Jet Engine [M]" -> "Supersonic Aircraft [M]";
     "Rocket Engine [M]" -> "Satellite [M]";
-    // "Rocket Engine [M]" -> "Nuclear Rocket Engine [M]";
-    // "Hovercraft" -> "Air-cushion Train [S]";
-
     "Electric Locomotive" -> "High Speed Electric Rail [S]";
     "Microwave amplifier [M]" -> "Laser [A]";
+    "Laser [A]" -> "Optical Fiber [C]";
     "Open Hearth Steelmaking" -> "Basic oxygen Steelmaking";
-    "Nylon" -> "Optical Fiber [C]";
+    "Plastics" -> "Optical Fiber [C]";
     "Microwave amplifier [M]" -> "Microwave Oven";
-    "Coal Power Plant [C]" -> "Nuclear Power Plant [S]";
     "AC Power Transmission [C]" -> "Electric Arc Furnace";
     "Quantum Mecanics [A]" -> "Laser [A]";
-    "General Relativity [A]" -> "Satellite [M]";
+    "Theory Of Relativity [P]" -> "Satellite [M]";
     "Composite Materials" -> "Carbon Fiber";
+
+    // "Autogyro [M]" -> "Flying Car";
+    // "Nuclear Research Reactor\n[M]" -> "Nuclear Rocket Engine [M]";
+    // "Nuclear Research Reactor\n[M]" -> "Nuclear Jet Engine [M]";
+    // "Jet Aircraft [M]" -> "Supersonic Aircraft [M]";
+    // "Jet Engine [M]" -> "Nuclear Jet Engine [M]";
+    // "Rocket Engine [M]" -> "Nuclear Rocket Engine [M]";
+    // "Hovercraft" -> "Air-cushion Train [S]";
 
     subgraph cluster_6 {
         label="1950-1974";
         graph [rank="same", margin=32, penwidth=5, color=lightgray, fontsize=20];
 
-        // "Flying Car" [color="lightblue"];
         "Containerization [C]" [color="lightblue"];
-        // "Electron Microscope [C]" [color="lightblue"];
         "Basic oxygen Steelmaking" [color="grey"];
-        "Polio Vaccine" [color="lightblue"];
-        "Offshore Oil Extraction" [color="lightblue"];
+        "Polio&Measles Vaccine [A]" [color="lightblue"];
+        "Offshore Oil Extraction [C]" [color="lightblue"];
         "Microprocessor [C]" [color="lightblue"];
         "Programming Languages [C]" [color="lightblue"];
         "Organ Transplantation" [color="lightblue"];
@@ -349,12 +384,9 @@ digraph {
         "Laser [A]" [color="lightblue"];
         "Operating Systems [C]" [color="lightblue"];
         "Supersonic Aircraft [M]" [color="lightblue"];
-        // "Air-cushion Train [S]" [color="blue"];
         "High Speed Electric Rail [S]" [color="purple"];
         "Satellite [M]" [color="yellow"];
-        // "Nuclear Rocket Engine [M]" [color="lightblue"];
         "Nuclear Power Plant [S]" [color="lightblue"];
-        // "Nuclear Jet Engine [M]" [color="lightblue"];
         "Nuclear Marine Propulsion \n [M]" [color="lightblue"];
         "Manned Spacecraft [S]" [color="yellow"];
         "Space Station [S]" [color="yellow"];
@@ -367,33 +399,39 @@ digraph {
         "Nuclear Reprocessing [M]" [color="lightblue"];
         "Thermonuclear Explosive \n [M]" [color="lightblue"];
         "Photovoltaic Cell [S]" [color="lightblue"];
-        "Improved Breeds" [color="lightblue"];
         "DNA [A]" [color="lightblue"];
         "Carbon Fiber" [color="lightblue"];
         "Float Glass" [color="red"];
-        "Industrial Desalination" [color="lightblue"];
+        "Industrial Desalination [S]" [color="lightblue"];
         "Intensive Fish Farming" [color="lightblue"];
+        "Liquefied Natural Gas [C]" [color="lightblue"];
 
         "Computer [M]" -> "Programming Languages [C]";
         "Nuclear Explosive [M]" -> "Thermonuclear Explosive \n [M]";
         "Nuclear Power Plant [S]" -> "Nuclear Reprocessing [M]";
         "Manned Spacecraft [S]" -> "Space Station [S]";
         "Satellite [M]" -> "Manned Spacecraft [S]";
-        // "Nuclear Jet Engine [M]" -> "Nuclear Aircraft";
-        "Supersonic Aircraft [M]" -> "HyperSonic Aircraft [M]";
         "Programming Languages [C]" -> "Operating Systems [C]";
         "Computer [M]" -> "Hard Disk [C]";
         "Laser [A]" -> "Hard Disk [C]";
         "Computer [M]" -> "Microprocessor [C]";
-        "Deep Oil Extraction" -> "Offshore Oil Extraction";
+        "Deep Oil Extraction [C]" -> "Offshore Oil Extraction [C]";
         "Basic oxygen Steelmaking" -> "Electric Arc Furnace";
-    }
 
+        // "Nuclear Jet Engine [M]" [color="lightblue"];
+        // "Flying Car" [color="lightblue"];
+        // "Electron Microscope [C]" [color="lightblue"];
+        // "Air-cushion Train [S]" [color="blue"];
+        // "Nuclear Rocket Engine [M]" [color="lightblue"];
+        // "Nuclear Jet Engine [M]" -> "Nuclear Aircraft";
+        // "Supersonic Aircraft [M]" -> "HyperSonic Aircraft [M]";
+    }
+    
+    "Operating Systems [C]" -> "Reusable Rocket [C]";
     "Satellite [M]" -> "GPS [M]";
     // "Satellite [M]" -> "Orion Nuclear Spacecraft";
-    "Satellite [M]" -> "Reusable Launch System [S]";
     // "Space Station [S]" -> "Rotating Space Habitat";
-    "HyperSonic Aircraft [M]" -> "Reusable Launch System [S]";
+    "Supersonic Aircraft [M]" -> "Reusable Rocket [C]";
     // "Thermonuclear Explosive \n [M]" -> "Orion Nuclear Spacecraft";
     // "Nuclear Reprocessing [M]" -> "Fusion Research Reactor [A]";
     // "Nuclear Reprocessing [M]" -> "Surgenerator [S]";
@@ -403,59 +441,68 @@ digraph {
     "Operating Systems [C]" -> "Video Games [C]";
     "Operating Systems [C]" -> "Productivity Software [C]";
     "DNA [A]" -> "GMO [A]";
+    "Operating Systems [C]" -> "Industrial Robots [C]";
 
     subgraph cluster_7 {
         label="1975-2000";
         graph [rank="same", margin=32, penwidth=5, color=lightgray, fontsize=20];
 
-        "Reusable Launch System [S]" [color="lightblue"];
         "GMO [A]" [color="lightblue"];
+        "Search Engine [C]" [color="lightblue"];
         "Internet [M]" [color="lightblue"];
+        "Wireless Internet";
         "Personal Computer [C]" [color="lightblue"];
         "GPS [M]" [color="lightblue"];
         // "Rotating Space Habitat";
-        "Industrial Robot [C]" [color="lightblue"];
+        "Industrial Robots [C]" [color="lightblue"];
         // "Surgenerator [S]";
         // "Orion Nuclear Spacecraft" [color="lightblue"];
         // "Fusion Research Reactor [A]" [color="yellow"];
         "Lithium-Ion Battery [C]" [color="purple"];
         "Video Games [C]" [color="lightblue"];
         "Productivity Software [C]" [color="lightblue"];
+
+        "Internet [M]" -> "Wireless Internet"; 
     }
 
+    "Industrial Robots [C]" -> "Fast Prototyping [C]";
+    "Internet [M]" -> "Fast Prototyping [C]";
     "Industrial Glass [C]" -> "Glass Bottle Production";
     "Glass Bottle Production" -> "Float Glass";
     "Lithium-Ion Battery [C]" -> "Smartphone [C]";
-    "Reusable Launch System [S]" -> "Reusable Orbital Vehicle [C]";
     // "Fusion Research Reactor" -> "Fusion Power Plant";
     "Internet [M]" -> "Livestreaming [C]";
     "Internet [M]" -> "Smartphone [C]";
     "Personal Computer [C]" -> "Smartphone [C]";
     "Internet [M]" -> "Search Engine [C]";
-    "Oil Extraction" -> "Shale Oil Extraction [C]";
-    "Deep Oil Extraction" -> "Shale Oil Extraction [C]";
+    "Oil Extraction [C]" -> "Shale Oil Extraction [C]";
+    "Deep Oil Extraction [C]" -> "Shale Oil Extraction [C]";
     "DNA [A]" -> "CRISPR-Cas9 [A]";
+    "Satellite [M]" -> "Reusable Rocket [C]";
     "Internet [M]" -> "Social Network [C]";
+    "Lithium-Ion Battery [C]" -> "Flying Drone [C]";
+    "Lithium-Ion Battery [C]" -> "Electric Car [C]";
 
     subgraph cluster_8 {
         label="2000-2024";
         graph [rank="same", margin=32, penwidth=5, color=lightgray, fontsize=20];
 
+        "Reusable Rocket [C]" [color="lightblue"];
         "Shale Oil Extraction [C]" [color="lightblue"];
-        // "Exosqueletton [A]" [color="lightblue"];
+        "Electric Car [C]" [color="lightblue"];
         "Smartphone [C]" [color="lightblue"];
         "CRISPR-Cas9 [A]";
-        "Drone [C]" [color="lightblue"];
+        "Flying Drone [C]" [color="lightblue"];
         "Livestreaming [C]" [color="lightblue"];
-        "Search Engine [C]" [color="lightblue"];
         "Social Network [C]" [color="lightblue"];
         "Personal Computer [C]" -> "Social Network [C]";
         "Fast Prototyping [C]" [color="lightblue"];
         "Internet [M]" -> "Neural Network [C]";
         "Neural Network [C]" [color="lightblue"];
+    
         // "Neural Network" -> "Artificial General Intelligence";
-        "Reusable Orbital Vehicle [C]" [color="lightblue"];
         // "Fusion Power Plant";
         // "Neuralink [C]" [color="lightblue"];
+        // "Exosqueletton [A]" [color="lightblue"];
     }
 }
